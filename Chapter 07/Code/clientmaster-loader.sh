@@ -1,0 +1,1 @@
+sqoop import --connect jdbc:mysql://localhost/customer --table T_CUSTMASTER --username sqoop -password sqoop --split-by ID --hive-import --hivedatabase default --verbose --hive-overwrite --hive-drop-import-delims -- hive-table t_custmaster --warehouse-dir /user/hive/warehouse

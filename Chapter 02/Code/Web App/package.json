@@ -1,0 +1,17 @@
+{
+  "name": "cust360webapp",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.6",
+    "mysql": "^2.5.4"
+  },
+  "description": "Presents customer 360 degree view ",
+  "main": "cust360webapp.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node cust360webapp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anurag Shrivastava",
+  "license": "ISC"
+}

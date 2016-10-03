@@ -1,0 +1,58 @@
+CREATE EXTERNAL TABLE t_accesslog (
+        `ip`                STRING,
+        `time_local`        STRING,
+        `method`            STRING,
+        `uri`               STRING,
+        `protocol`          STRING,
+        `status`            STRING,
+        `bytes_sent`        STRING,
+        `referer`           STRING,
+        `useragent`         STRING
+        )
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.contrib.serde2.RegexSerDe'
+    WITH SERDEPROPERTIES (
+    'input.regex'='^(\\S+) \\S+ \\S+ \\[([^\\[]+)\\] "(\\w+) (\\S+) (\\S+)" (\\d+) (\\d+) "([^"]+)" "([^"]+)".*'
+)
+STORED AS TEXTFILE
+LOCATION '/hbp/chapt2/ex2/apachelogs';
+
+
+
+CREATE EXTERNAL TABLE t_tweets (
+        id BIGINT,
+        created_at STRING,
+        source STRING,
+        favorited BOOLEAN,
+        retweeted_status STRUCT<
+        text:STRING,
+        user:STRUCT<screen_name:STRING,name:STRING>,
+        retweet_count:INT>,
+        entities STRUCT<
+        urls:ARRAY<STRUCT>,
+        user_mentions:ARRAY<STRUCT<screen_name:STRING,name:STRING>>,
+        hashtags:ARRAY<STRUCT>>,
+        text STRING,
+        user STRUCT< screen_name:STRING, name:STRING, friends_count:INT, followers_count:INT, statuses_count:INT, verified:BOOLEAN, utc_offset:INT, time_zone:STRING>,
+        in_reply_to_screen_name STRING
+)
+PARTITIONED BY (datehour INT)
+ROW FORMAT SERDE ‘com.cloudera.hive.serde.JSONSerDe’
+LOCATION '/hbp/chapt2/ex2/tweets';
+
+
+create table t_custbrandvisits(
+        first_name            varchar(30),
+        last_name             varchar(30),
+        gender                varchar(1),
+        email                 varchar(40),
+        userid                varchar(30),
+        brand                 varchar(30),
+        cnt                   bigint
+);
+
+
+create table t_usertweets(
+        tweettext             varchar(140),
+        userid                varchar(30),
+        followercnt           int
+);
