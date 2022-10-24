@@ -29,3 +29,7 @@ needed for the examples have been mentioned in the chapters where they are first
 * [Hadoop Operations and Cluster Management Cookbook](https://www.packtpub.com/big-data-and-business-intelligence/hadoop-operations-and-cluster-management-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781782165163)
 ###Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781783980307">https://packt.link/free-ebook/9781783980307 </a> </p>
